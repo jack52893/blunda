@@ -1,0 +1,28 @@
+<div class="container mat-card">
+  <div class="highlight">
+    <!-- <app-favorite [id]='product.id' class='favorite'></app-favorite> -->
+    <div class="tag">
+      <app-best-seller-tag class='best-seller' [size]="'xsmall'" *ngIf='bestSeller'></app-best-seller-tag>
+    </div>
+  </div>
+  <div class="image"><img [src]='product.imageUrl' [alt]='product.name'></div>
+  <div class="details">
+    <div class='name' *ngIf="breakpoint === 'xsmall'">{{ product.name | limit : 60 }}</div>
+    <div class='name' *ngIf="breakpoint === 'small'">{{ product.name | limit : 50 }}</div>
+    <div class='name' *ngIf="breakpoint === 'medium'">{{ product.name | limit : 60 }}</div>
+    <div class='name' *ngIf="breakpoint === 'large'">{{ product.name | limit : 60 }}</div>
+    <div class='name' *ngIf="breakpoint === 'xlarge'">{{ product.name | limit : 60 }}</div>
+    <div class="rating">
+      <app-rating [rating]='rating' [reviews]='reviews '></app-rating>
+    </div>
+    <div class="discount">
+      <app-discount *ngIf='discount' [id]='product.id'></app-discount>
+    </div>
+    <div class="price">
+      <app-price [id]='product.id'></app-price>
+    </div>
+    <!-- <div class="action">
+      <app-add-to-cart-button [id]='product.id'></app-add-to-cart-button>
+    </div> -->
+  </div>
+</div>

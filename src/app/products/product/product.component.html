@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="product">
+    <h1 class='title'>{{ product?.name }}</h1>
+    <div class="highlight">
+      <app-favorite [id]='product.id'
+        *ngIf="breakpoint === 'xsmall' || breakpoint === 'small' || breakpoint === 'medium'" class='favorite'>
+      </app-favorite>
+      <app-favorite [id]='product.id' [size]="'xlarge'" *ngIf="breakpoint === 'large' || breakpoint === 'xlarge'"
+        class='favorite'>
+      </app-favorite>
+      <div class="tag">
+        <app-best-seller-tag class='best-seller' [size]="'small'" *ngIf='bestSeller'></app-best-seller-tag>
+      </div>
+    </div>
+    <img class="image" [src]="product?.imageUrl" [alt]="product?.name" #preview>
+    <div class="images">
+      <img matRipple *ngFor='let img of productImages' (click)="preview.src = img" [src]="img">
+    </div>
+    <div class="details">
+      <div class="rating">
+        <!-- <app-rating [rating]='rating' [reviews]='reviews?.length'></app-rating> -->
+      </div>
+      <div class='discount'>
+        <app-discount [id]='product.id' *ngIf='+priceAfterDiscount < +product.price'></app-discount>
+      </div>
+      <div class="price">
+        <app-price [id]='product.id'></app-price>
+      </div>
+      <div class='buttons'>
+        <app-add-to-cart-button [id]='product.id'></app-add-to-cart-button>
+        <button class="buy-button" mat-raised-button color='primary' routerLink='/cart' type="button">
+          <mat-icon>checkout</mat-icon>
+          Checkout
+        </button>
+      </div>
+    </div>
+    <div class="description">
+      <p>{{ product?.description }}</p>
+    </div>
+  </div>
+
+  <div class="related-sections">
+    <h3 class="section-title">Customers reviews:</h3>
+    <div class="reviews">
+      <app-review class="review" *ngFor='let review of reviews' [review]='review'></app-review>
+    </div>
+    <h3 class="section-title">Related products:</h3>
+    <div class="related-products">
+      <app-related-product-card matRipple class='related-product' *ngFor='let product of relatedProducts' [product]='product'
+        [routerLink]="'/product/' + product.id"></app-related-product-card>
+    </div>
+    <h3 class='section-title'>Products Viewed By Customers:</h3>
+    <div class='customers-viewed-products'>
+      <app-related-product-card matRipple class='customers-viewed-product' *ngFor='let product of customersViewedProducts'
+        [product]='product' [routerLink]="'/product/' + product.id"></app-related-product-card>
+    </div>
+    <h3 class='section-title'>Recommended Products:</h3>
+    <div class='recommended-products'>
+      <app-related-product-card matRipple class='recommended-product' *ngFor='let product of recommendedProducts'
+        [product]='product' [routerLink]="'/product/' + product.id"></app-related-product-card>
+    </div>
+    <!-- <h3 class='section-title'>Viewed Products:</h3>
+    <div class='viewed-products'>
+      <app-related-product-card class='viewed-product mat-card' *ngFor='let product of viewedProducts' [product]='product'
+        [routerLink]="'/product/' + product.id"></app-related-product-card>
+    </div> -->
+  </div>
+</div>

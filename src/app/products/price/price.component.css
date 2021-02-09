@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.discount {
+  font-weight: lighter;
+  text-decoration: line-through;
+}

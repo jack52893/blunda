@@ -1,0 +1,15 @@
+.xsmall {
+  font-size: small;
+}
+.small {
+  font-size: medium;
+}
+.medium {
+  font-size: large;
+}
+.large {
+  font-size: x-large;
+}
+.xlarge {
+  font-size: xx-large;
+}

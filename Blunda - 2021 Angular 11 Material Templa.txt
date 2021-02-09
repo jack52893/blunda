@@ -1,0 +1,16 @@
+Blunda - 2021 Angular 11 Material Template - Everything is Observable
+
+https://lucid-hoover-63de17.netlify.app
+
+Built for developers, Blunda 2021 has many things that will make your life easy and save you a lot of time.
+Fully responsive template with Five MediaQuery breakpoints that cover all devices and resolutions.
+Everything is Observable, you can simply replace any function with your http api endpoint without any changes to the code.
+Services were built in an initiutive way that you will expect where you will find each service.
+Services were built in the way that guarantee only on source of truth, that you have just one service for any aspect in the template.
+Template is 100% complete and ready for developers. No images used, in order not to disturbe you or waste your time getting rid of them.
+Template is not splited in modules because I beleive you will modify it anyways. So it is ready to be splitted in modules according to your needs.
+Ready made template that will help you start as soon as possible.
+Packages are updated to latest Angular v11.1.2 2021.
+Angular v11.1.2
+Angular Material v11.1.2
+Material Carousel v0.6.0
