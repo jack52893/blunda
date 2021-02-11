@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="section-title">
+    Recommended Products:
+  </div>
+  <div class="products">
+    <app-related-product-card matRipple class="product mat-card" [ngClass]="{xsmall: size === 'xsmall'}" *ngFor='let product of recommendedProducts' [routerLink]="'/product/' + product.id" [product]='product'>
+    </app-related-product-card>
+    <app-related-product-card matRipple class="product mat-card" [ngClass]="{small: size === 'small'}" *ngFor='let product of recommendedProducts' [routerLink]="'/product/' + product.id" [product]='product'>
+    </app-related-product-card>
+    <app-related-product-card matRipple class="product mat-card" [ngClass]="{medium: size === 'medium'}" *ngFor='let product of recommendedProducts' [routerLink]="'/product/' + product.id" [product]='product'>
+    </app-related-product-card>
+    <app-related-product-card matRipple class="product mat-card" [ngClass]="{large: size === 'large'}" *ngFor='let product of recommendedProducts' [routerLink]="'/product/' + product.id" [product]='product'>
+    </app-related-product-card>
+    <app-related-product-card matRipple class="product mat-card" [ngClass]="{xlarge: size === 'xlarge'}" *ngFor='let product of recommendedProducts' [routerLink]="'/product/' + product.id" [product]='product'>
+    </app-related-product-card>
+  </div>
+</div>

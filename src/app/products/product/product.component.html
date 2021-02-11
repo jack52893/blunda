@@ -54,15 +54,7 @@
       <app-related-product-card matRipple class='customers-viewed-product' *ngFor='let product of customersViewedProducts'
         [product]='product' [routerLink]="'/product/' + product.id"></app-related-product-card>
     </div>
-    <h3 class='section-title'>Recommended Products:</h3>
-    <div class='recommended-products'>
-      <app-related-product-card matRipple class='recommended-product' *ngFor='let product of recommendedProducts'
-        [product]='product' [routerLink]="'/product/' + product.id"></app-related-product-card>
-    </div>
-    <!-- <h3 class='section-title'>Viewed Products:</h3>
-    <div class='viewed-products'>
-      <app-related-product-card class='viewed-product mat-card' *ngFor='let product of viewedProducts' [product]='product'
-        [routerLink]="'/product/' + product.id"></app-related-product-card>
-    </div> -->
+    <app-recommended-products></app-recommended-products>
+    <app-recently-viewed-products></app-recently-viewed-products>
   </div>
 </div>

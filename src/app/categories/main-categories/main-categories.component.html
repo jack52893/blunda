@@ -1,0 +1,5 @@
+<div class="container"
+  [ngClass]="{xsmall:breakpoint === 'xsmall', small: breakpoint === 'small', medium: breakpoint === 'medium', large: breakpoint === 'large', xlarge: breakpoint === 'xlarge'}">
+  <app-main-category-card [mainCategory]='mainCategory' *ngFor='let mainCategory of mainCategories'>
+  </app-main-category-card>
+</div>

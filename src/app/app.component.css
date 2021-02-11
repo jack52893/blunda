@@ -19,13 +19,3 @@ mat-sidenav {
   background-color: rgb(255, 255, 255, 0.5);
   overflow: hidden;
 }
-
-@media(min-width: 600px) {
-  .spinner {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}

@@ -1,0 +1,10 @@
+<div *ngIf='mainCategory' class="container">
+  <div class="title">{{ mainCategory.name }}</div>
+
+
+  <div class='categories' [ngClass]="{xsmall:breakpoint === 'xsmall', small: breakpoint === 'small', medium: breakpoint === 'medium', large: breakpoint === 'large', xlarge: breakpoint === 'xlarge'}">
+    <app-category-card [category]='category' *ngFor='let category of categories'>
+    </app-category-card>
+  </div>
+
+</div>

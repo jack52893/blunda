@@ -1,0 +1,4 @@
+<div [routerLink]="'/category/' + category?.id" [queryParams]="{ id: category?.id}" matRipple class='category mat-card'
+  *ngIf='category'>
+  <img class="image" [src]='category.imageUrl' [alt]='category.name'>
+</div>

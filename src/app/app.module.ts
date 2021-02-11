@@ -19,8 +19,6 @@ import { SearchComponent } from './products/search/search.component';
 import { RatingComponent } from './products/rating/rating.component';
 import { ReviewComponent } from './products/review/review.component';
 import { PopularComponent } from './products/popular/popular.component';
-import { CategoryComponent } from './products/categories/category/category.component';
-import { MainCategoriesComponent } from './products/categories/main-categories/main-categories.component';
 import { ProductComponent } from './products/product/product.component';
 import { ProductCardComponent } from './products/product-card/product-card.component';
 import { CartComponent } from './cart/cart.component';
@@ -32,7 +30,14 @@ import { RelatedProductCardComponent } from './products/related-product-card/rel
 import { AddToCartButtonComponent } from './products/buttons/add-to-cart-button/add-to-cart-button.component';
 import { CheckoutComponent } from './cart/checkout/checkout.component';
 import { SuccessComponent } from './cart/success/success.component';
-import { MainCategoryComponent } from './products/categories/main-category/main-category.component';
+import { RecommendedProductsComponent } from './products/recommended-products/recommended-products.component';
+import { RecentlyViewedProductsComponent } from './products/recently-viewed-products/recently-viewed-products.component';
+import { FooterComponent } from './footer/footer.component';
+import { CategoryCardComponent } from './categories/category-card/category-card.component';
+import { CategoryComponent } from './categories/category/category.component';
+import { MainCategoriesComponent } from './categories/main-categories/main-categories.component';
+import { MainCategoryComponent } from './categories/main-category/main-category.component';
+import { MainCategoryCardComponent } from './categories/main-category-card/main-category-card.component';
 
 @NgModule({
   declarations: [
@@ -43,8 +48,6 @@ import { MainCategoryComponent } from './products/categories/main-category/main-
     LoginComponent,
     SignupComponent,
     LimitPipe,
-    CategoryComponent,
-    MainCategoriesComponent,
     SearchComponent,
     RatingComponent,
     ReviewComponent,
@@ -61,7 +64,14 @@ import { MainCategoryComponent } from './products/categories/main-category/main-
     AddToCartButtonComponent,
     CheckoutComponent,
     SuccessComponent,
-    MainCategoryComponent
+    RecommendedProductsComponent,
+    RecentlyViewedProductsComponent,
+    FooterComponent,
+    CategoryComponent,
+    CategoryCardComponent,
+    MainCategoriesComponent,
+    MainCategoryComponent,
+    MainCategoryCardComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { switchMap, take } from 'rxjs/operators';
-import { Category } from '../products/categories/category/service/category.model';
-import { CategoryService } from '../products/categories/category/service/category.service';
-import { MainCategory } from '../products/categories/main-category/service/main-category.model';
-import { MainCategoryService } from '../products/categories/main-category/service/main-category.service';
+import { Category } from '../categories/category/service/category.model';
+import { CategoryService } from '../categories/category/service/category.service';
+import { MainCategory } from '../categories/main-category/service/main-category.model';
+import { MainCategoryService } from '../categories/main-category/service/main-category.service';
 
 @Component({
   selector: 'app-sidenav',

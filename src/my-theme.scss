@@ -9,23 +9,23 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$blunda-app-primary: mat-palette($mat-blue);
-$blunda-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$shopping-cart-app-primary: mat-palette($mat-blue);
+$shopping-cart-app-accent:  mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$blunda-app-warn:    mat-palette($mat-red);
+$shopping-cart-app-warn:    mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as `color` or `typography`.
-$blunda-app-theme: mat-light-theme((
+$shopping-cart-app-theme: mat-light-theme((
   color: (
-    primary: $blunda-app-primary,
-    accent: $blunda-app-accent,
-    warn: $blunda-app-warn,
+    primary: $shopping-cart-app-primary,
+    accent: $shopping-cart-app-accent,
+    warn: $shopping-cart-app-warn,
   )
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($blunda-app-theme);
+@include angular-material-theme($shopping-cart-app-theme);

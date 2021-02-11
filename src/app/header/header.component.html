@@ -5,7 +5,7 @@
         <button mat-icon-button (click)='onToggle()' *ngIf="breakpoint === 'xsmall'">
           <mat-icon>menu</mat-icon>
         </button>
-        <div><button class='title' routerLink="/" type="button" mat-button>Blunda</button></div>
+        <div><button class='title' routerLink="/" type="button" mat-button>Shopping Cart</button></div>
       </div>
       <div class="items">
         <form class='form' [formGroup]='form' (ngSubmit)='onSubmit()' *ngIf="breakpoint !== 'xsmall'">

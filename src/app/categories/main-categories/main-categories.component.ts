@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Breakpoint } from 'src/app/utils/ui/breakpoint.type';
+import { BreakpointService } from 'src/app/utils/ui/service/breakpoint.service';
 import { MainCategory } from '../main-category/service/main-category.model';
 import { MainCategoryService } from '../main-category/service/main-category.service';
 
@@ -11,8 +13,12 @@ import { MainCategoryService } from '../main-category/service/main-category.serv
 export class MainCategoriesComponent implements OnInit, OnDestroy {
   mainCategories: MainCategory[];
   subscriptions: Subscription[] = [];
+  breakpoint: Breakpoint = 'xsmall';
 
-  constructor(private mainCategoryService: MainCategoryService) {}
+  constructor(
+    private mainCategoryService: MainCategoryService,
+    private breakpointService: BreakpointService
+  ) {}
 
   ngOnInit(): void {
     const mainCategory: MainCategory = {
@@ -32,10 +38,15 @@ export class MainCategoriesComponent implements OnInit, OnDestroy {
           }
         })
     );
+    this.subscriptions.push(
+      this.breakpointService.getBreakpoint().subscribe((breakpoint) => {
+        this.breakpoint = breakpoint;
+      })
+    );
   }
 
   ngOnDestroy() {
-    for(let subscription of this.subscriptions) {
+    for (let subscription of this.subscriptions) {
       subscription.unsubscribe();
     }
     this.subscriptions = undefined;

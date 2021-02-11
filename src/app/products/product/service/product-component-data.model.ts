@@ -10,6 +10,4 @@ export interface ProductComponentData {
   priceAfterDiscount: string;
   relatedProducts: Product[];
   customersViewedProducts: Product[];
-  recommendedProducts: Product[];
-  viewedProducts: Product[];
 }

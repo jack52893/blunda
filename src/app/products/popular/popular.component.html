@@ -1,3 +1,10 @@
-<app-product-card matRipple class='product mat-card' *ngFor='let product of popularProducts' [product]='product'
-  [routerLink]="'/product/' + product.id">
-</app-product-card>
+<div class="container">
+  <div class="section-title">Popular Products:</div>
+
+  <div class="products"
+    [ngClass]="{xsmall: breakpoint === 'xsmall', small: breakpoint==='small', medium: breakpoint === 'medium', large: breakpoint === 'large', xlarge: breakpoint === 'xlarge'}">
+    <app-product-card *ngFor='let product of popularProducts' [product]='product'>
+    </app-product-card>
+  </div>
+
+</div>

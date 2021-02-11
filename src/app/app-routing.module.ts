@@ -3,11 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './cart/checkout/checkout.component';
 import { SuccessComponent } from './cart/success/success.component';
+import { CategoryComponent } from './categories/category/category.component';
+import { MainCategoryComponent } from './categories/main-category/main-category.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { CategoryComponent } from './products/categories/category/category.component';
-import { MainCategoryComponent } from './products/categories/main-category/main-category.component';
 import { ProductComponent } from './products/product/product.component';
 import { ProductResolver } from './products/product/service/product.resolver';
 import { SearchComponent } from './products/search/search.component';
@@ -37,7 +37,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

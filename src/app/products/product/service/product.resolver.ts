@@ -4,9 +4,8 @@ import {
   Resolve,
   RouterStateSnapshot,
 } from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { first, map, switchMap, take } from 'rxjs/operators';
-import { Utils } from 'src/app/utils/utils';
+import { Observable } from 'rxjs';
+import { first, map, switchMap } from 'rxjs/operators';
 import { DiscountService } from '../../discount/service/discount.service';
 import { FavoriteService } from '../../favorite/service/favorite.service';
 import { ReviewService } from '../../review/service/review.service';
@@ -14,9 +13,7 @@ import { BestSellerService } from '../../tags/best-seller-tag/service/best-selle
 import { CustomersViewedProductsService } from './customers-viewed-products.service';
 import { ProductComponentData } from './product-component-data.model';
 import { ProductService } from './product.service';
-import { RecommendedProductsService } from './recommended-products.service';
 import { RelatedProductsService } from './related-products.service';
-import { ViewedProductsService } from './viewed-products.service';
 
 @Injectable({ providedIn: 'root' })
 export class ProductResolver implements Resolve<ProductComponentData> {
@@ -38,8 +35,6 @@ export class ProductResolver implements Resolve<ProductComponentData> {
     private discountService: DiscountService,
     private relatedProductsService: RelatedProductsService,
     private customersViewedProductsService: CustomersViewedProductsService,
-    private recommendedProductsService: RecommendedProductsService,
-    private viewedProductsService: ViewedProductsService
   ) {}
 
   resolve(
@@ -58,9 +53,7 @@ export class ProductResolver implements Resolve<ProductComponentData> {
       bestSeller: false,
       priceAfterDiscount: null,
       relatedProducts: null,
-      customersViewedProducts: null,
-      recommendedProducts: null,
-      viewedProducts: null,
+      customersViewedProducts: null
     };
 
     return this.productService.getProduct(id).pipe(

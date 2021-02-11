@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/cart/service/cart.service';
 import { Breakpoint } from 'src/app/utils/ui/breakpoint.type';
 import { BreakpointService } from 'src/app/utils/ui/service/breakpoint.service';
+import { Size } from 'src/app/utils/ui/size.type';
 import { DiscountService } from '../discount/service/discount.service';
 import { FavoriteService } from '../favorite/service/favorite.service';
 import { Product } from '../product/service/product.model';
@@ -17,11 +18,13 @@ export class ProductCardComponent implements OnInit, OnDestroy {
   @Input() product: Product;
   @Input() rating = 5;
   @Input() reviews = 500;
+  @Input() size: Size = 'xsmall';
   bestSeller = false;
   favorite: boolean = false;
   discount = false;
   breakpoint: Breakpoint = 'xsmall';
   subscriptions: Subscription[] = [];
+  limit: number = 100;
 
   constructor(
     private favoriteService: FavoriteService,
@@ -63,6 +66,25 @@ export class ProductCardComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.breakpointService.getBreakpoint().subscribe((breakpoint) => {
         this.breakpoint = breakpoint;
+        switch (this.breakpoint) {
+          case 'xsmall':
+            this.limit = 60;
+            break;
+          case 'small':
+            this.limit = 60;
+            break;
+          case 'medium':
+            this.limit = 80;
+            break;
+          case 'large':
+            this.limit = 100;
+            break;
+          case 'xlarge':
+            this.limit = 100;
+            break;
+          default:
+            this.limit = 100;
+        }
       })
     );
   }
@@ -75,14 +97,12 @@ export class ProductCardComponent implements OnInit, OnDestroy {
     this.discountService
       .getPriceAfterDiscount(this.product.id)
       .subscribe((priceAfterDiscount) => {
-        this.cartService.addToCart(
-          this.product.id
-        );
+        this.cartService.addToCart(this.product.id);
       });
   }
 
   ngOnDestroy() {
-    for(let subscription of this.subscriptions) {
+    for (let subscription of this.subscriptions) {
       subscription.unsubscribe();
     }
     this.subscriptions = undefined;

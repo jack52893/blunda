@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   NavigationCancel,
   NavigationEnd,
@@ -7,7 +7,6 @@ import {
   Router,
   RouterEvent,
 } from '@angular/router';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +21,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe((event: RouterEvent) => {
       if (event instanceof NavigationStart) {
-        // this.loading = true;
+        this.loading = true;
       } else if (
         event instanceof NavigationEnd ||
         event instanceof NavigationCancel ||
